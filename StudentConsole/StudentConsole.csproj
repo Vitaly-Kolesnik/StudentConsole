@@ -32,7 +32,16 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CommandParse.cs" />
+    <Compile Include="CommandsParser.cs" />
+    <Compile Include="Repository.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="Commands\Command.cs" />
+    <Compile Include="Commands\AddComand.cs" />
+    <Compile Include="Commands\DeleteComand.cs" />
+    <Compile Include="Commands\EndProgram.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

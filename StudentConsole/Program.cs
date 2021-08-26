@@ -1,12 +1,19 @@
 ﻿using System;
+using StudentConsole;
 
-namespace StudentConsole
+namespace StudentsConsoleApp
 {
-    class MainClass
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            Repository repository = new Repository ();
+
+            var parser = new CommandsParser(repository);
+
+            parser.Parse(Console.ReadLine());
+
         }
     }
 }
