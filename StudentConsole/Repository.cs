@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using StudentConsole;
+﻿using StudentConsole;
 
 namespace StudentsConsoleApp
 {
@@ -11,38 +6,58 @@ namespace StudentsConsoleApp
     {
         public Student[] students = new Student[10];
 
-        public void Add(Student student)
-        {
-            int firstNullElemetArrayStudent = Array.IndexOf(students,null); //метод ищущий первый пустой элемент в массиве и возвращающий его индекс
+        private int studentID = 0;
 
-            if (firstNullElemetArrayStudent == -1)
+        public int Add(Student student)
+        {
+            int emptyNumber = -1;
+            for (int index =0; index<this.students.Length; index++)
             {
-                Console.WriteLine("База данных заполнена. Удалите далите поле для ввода данных");
+                if (this.students[index] == null)
+                {
+                    this.students[index] = student;
+                    this.students[index].Id = studentID+=1;
+                    return (emptyNumber += 1);
+                }
             }
-            else
+            return emptyNumber;
+        }
+
+        public void Delete(int numberId) //Нет необходимости возвращать результат, мы точно знаешь, что такой ID есть
+        {
+            for (int index = 0; index < students.Length; index++ )
             {
-                students[firstNullElemetArrayStudent] = student;
+                if (students[index].Id == numberId)
+                {
+                    students[index] = null;
+                    return;
+                }
             }
         }
 
-        public void Delete(int idForDelet)
+        public Student Get (int numberId)
         {
+            Student variable = null;
 
-            for (int index =0; index<students.Length;index++)
+            foreach (Student s in students)
             {
-                if (index == (idForDelet-=1)) //сразу отнимаю, что бы положить в одну систему счета
+                if (s != null && s.Id == numberId)
                 {
-                    students[index] = null; //на случай если пользователь хочет удалить последний id в журнале
-                }
-
-                if (index > (idForDelet) && students[index]!=null)
-                {
-                    students[index - 1] = students[index]; //все записи перезаписываются, что бы сдвинуться на один элемент при удалении. При создании массива туда записываются значения 0. Надо проверить как будет работа этого if 
-                    students[index] = null; 
+                    variable = s;
                 }
             }
+            return variable;
+        }
 
-            
+        public void Edit (Student student, int id)
+        {
+            for (int index = 0; index<students.Length; index++)
+            {
+                 if (students[index] !=null && students[index].Id==id)
+                 {
+                    students[index] = student;
+                 }
+            }
         }
     }
 }

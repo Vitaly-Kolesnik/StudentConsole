@@ -39,6 +39,12 @@
     <Compile Include="Commands\AddComand.cs" />
     <Compile Include="Commands\DeleteComand.cs" />
     <Compile Include="Commands\EndProgram.cs" />
+    <Compile Include="CheckID.cs" />
+    <Compile Include="Commands\GetComand.cs" />
+    <Compile Include="Commands\EditComand.cs" />
+    <Compile Include="Commands\ShowListComand.cs" />
+    <Compile Include="Commands\RndComand.cs" />
+    <Compile Include="Commands\FindComand.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />

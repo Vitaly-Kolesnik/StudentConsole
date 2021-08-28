@@ -1,60 +1,70 @@
 ﻿using StudentConsole.Commands;
 using StudentsConsoleApp.Commands;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StudentsConsoleApp
 {
     class CommandsParser
     {
-        private  Repository repository;
+        private Repository repository;
 
         public CommandsParser(Repository repository)
         {
             this.repository = repository;
         }
 
-        public void Parse(string input)
+        public Command Parse(string input)
         {
             var inputArr = input.Split();
-            string[] parametrs = new string[5]; //Изменил на 5, так как ADD это по факту первый а дальше 2-имя, 3-фамилия, 4-пол, 5-возраст
+            string[] parametrs = new string[6];
             int index = 0;
-
             foreach (var item in inputArr)
             {
-                if (!string.IsNullOrEmpty(item) && index < parametrs.Length)//Метод возвращает true если строка пуста или имеет значение null, соответственно мы должны заходить в цикл и присваивать значение, когда метод возвращает false. Добавил (!)
+                if (!string.IsNullOrEmpty(item) && index < parametrs.Length)
                 {
                     parametrs[index] = item;
                     index++;
                 }
             }
 
-            switch ( (parametrs[0]).ToUpper() )
+            switch (parametrs[0].ToUpper())
             {
                 case "ADD":
-                    new AddComand(repository, parametrs).Execute(); //добавил сам метод для обработки ввода и использования метода. До этого возвращало значение 
-                    Parse(Console.ReadLine());
-                    break;
+                    {
+                        return new AddComand(repository, parametrs);
+                    }
                 case "DELETE":
-                    new DeleteComand(repository, parametrs).Execute();
-                    Parse(Console.ReadLine());
-                    break;
+                    {
+                        return new DeleteComand(repository, parametrs);
+                    }
                 case "END":
-                    new EndProgram().Execute(); //добавил метод для выхода из программ. Программа работает - пока пользователь не выйдет из нее. Обернул в объект, что бы предусмотреть в данном объекте мероприятия по сохранию и доработке проги при закрытии
-                    break; //был еще вариант использовать методо exit (), пространства имен Environment
-
+                    {
+                        return new EndProgram();
+                    }
+                case "EDIT":
+                    {
+                        return new EditComand(repository,parametrs);
+                    }
+                case "LIST":
+                    {
+                        return new ShowListComand(repository, parametrs);
+                    }
+                case "RANDOM":
+                    {
+                        return new RndComand(repository, parametrs);
+                    }
+                case "FIND":
+                    {
+                        return new FindComand(repository, parametrs);
+                    }
+                case "GET":
+                    {
+                        return new GetComand(repository, parametrs);
+                    }
                 default:
-
-                    new Command(repository, parametrs).Execute();
-                    Parse(Console.ReadLine());
-                    break;
+                    {
+                        return new Command(repository,parametrs);
+                    }
             }
-
-            //по зацикливанию работы приложения, был вариант еще в данном месте расположить тернарный оператор или оператор ветвлени, посчитал, что это доп нагрузка по вычислению. Проще было все же в каждом блоке case перевызвать метод и работать пока пользовать не введет END
-            //вообще команда END немного другого уровня относительно команд ввода и обработки, которые у нас содержит swich, но поскольку команд такого уровня больше нет (Создать новую базу, Сохранить, Изменить данные в конкретной базе данных) - я допустил возможность распарсить тут. По хорошему надо было бы еще один файл над класс над парсером распологать, что бы обернуть данные команды в объекты в дальнейшем
         }
     }
 }

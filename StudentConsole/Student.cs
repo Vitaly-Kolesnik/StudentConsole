@@ -1,12 +1,12 @@
-﻿using System;
-namespace StudentConsole
+﻿namespace StudentConsole
 {
-    public class Student
-    {
-        public string NameStudent { get; set; }
-        public string SurNameStudents { get; set; }
-        public string Gender { get; set; }
-        public string Age { get; set; }
+    class Student
+    { 
+        public string NameStudent { get; }
+        public string SurNameStudents { get; }
+        public string Gender { get; }
+        public string Age { get; }
+        public int Id { get; set; }
 
         public Student(string nameStudent, string surNameStudents, string gender, string age)
         {
@@ -15,8 +15,9 @@ namespace StudentConsole
             this.Gender = gender;
             this.Age = age;
         }
-
-
-
+        public override string ToString()
+        {
+            return Id + " " + NameStudent +" "+ SurNameStudents+ " " + Gender + " " + Age;
+        }
     }
 }

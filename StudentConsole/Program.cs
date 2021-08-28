@@ -1,5 +1,4 @@
 ﻿using System;
-using StudentConsole;
 
 namespace StudentsConsoleApp
 {
@@ -7,13 +6,18 @@ namespace StudentsConsoleApp
     {
         static void Main(string[] args)
         {
-            
-            Repository repository = new Repository ();
+            Repository repository = new Repository();
+            string result;
 
-            var parser = new CommandsParser(repository);
-
-            parser.Parse(Console.ReadLine());
-
+            do
+            {
+                string input = Console.ReadLine();
+                var parser = new CommandsParser(repository);
+                var commandUser = parser.Parse(input);
+                result = commandUser.Execute();
+                Console.WriteLine(result);
+            }
+            while (result != "The end!");
         }
     }
 }
