@@ -45,6 +45,7 @@
     <Compile Include="Commands\ShowListComand.cs" />
     <Compile Include="Commands\RndComand.cs" />
     <Compile Include="Commands\FindComand.cs" />
+    <Compile Include="Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
