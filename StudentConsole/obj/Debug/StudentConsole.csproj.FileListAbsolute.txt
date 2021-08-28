@@ -1,0 +1,6 @@
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Debug/StudentConsole.csproj.AssemblyReference.cache
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Debug/StudentConsole.csproj.CoreCompileInputs.cache
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/bin/Debug/StudentConsole.exe
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/bin/Debug/StudentConsole.pdb
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Debug/StudentConsole.exe
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Debug/StudentConsole.pdb

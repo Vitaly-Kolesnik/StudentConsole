@@ -1,0 +1,3 @@
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/bin/Release/StudentConsole.exe
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Release/StudentConsole.csproj.CoreCompileInputs.cache
+/Users/vitali.kolesnik/Projects/StudentConsole/StudentConsole/obj/Release/StudentConsole.exe

@@ -1,0 +1,28 @@
+﻿<Properties StartupConfiguration="{B675D470-ACFB-4F3A-A5AA-3FF8A78C3732}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="StudentConsole/Commands/ShowListComand.cs">
+    <Files>
+      <File FileName="StudentConsole/Commands/ShowListComand.cs" Line="22" Column="28" />
+      <File FileName="StudentConsole/Commands/AddComand.cs" />
+      <File FileName="StudentConsole/Commands/DeleteComand.cs" />
+      <File FileName="StudentConsole/Test.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="StudentConsole" expanded="True">
+            <Node name="StudentConsole" expanded="True">
+              <Node name="Commands" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.StudentConsole PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
