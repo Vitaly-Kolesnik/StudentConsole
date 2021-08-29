@@ -1,6 +1,4 @@
-﻿using System;
-using System.Diagnostics;
-using StudentsConsoleApp;
+﻿using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
 namespace StudentConsole.Commands
@@ -11,18 +9,10 @@ namespace StudentConsole.Commands
             : base(repository, parametrs)
         {
         }
+
         public override string Execute()
         {
-            if (checkId.Checking()== -1)
-            {
-                return "Введенного ID не существует!";
-            }
-            else
-            {
-                repository.Delete(int.Parse(parametrs[1]));
-
-                return "Удалено";
-            }
+            return repository.Delete(int.Parse(parametrs[1])) == 1 ? "Удалено" : "Ошибка";
         }
     }
 }

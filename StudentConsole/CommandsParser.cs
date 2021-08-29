@@ -5,7 +5,7 @@ namespace StudentsConsoleApp
 {
     class CommandsParser
     {
-        private Repository repository;
+        private readonly Repository repository;
 
         public CommandsParser(Repository repository)
         {
@@ -17,7 +17,8 @@ namespace StudentsConsoleApp
             var inputArr = input.Split();
             string[] parametrs = new string[6];
             int index = 0;
-            foreach (var item in inputArr)
+
+            foreach (string item in inputArr)
             {
                 if (!string.IsNullOrEmpty(item) && index < parametrs.Length)
                 {
@@ -29,41 +30,23 @@ namespace StudentsConsoleApp
             switch (parametrs[0].ToUpper())
             {
                 case "ADD":
-                    {
-                        return new AddComand(repository, parametrs);
-                    }
+                    return new AddComand(repository, parametrs);
                 case "DELETE":
-                    {
-                        return new DeleteComand(repository, parametrs);
-                    }
+                    return new DeleteComand(repository, parametrs);
                 case "END":
-                    {
-                        return new EndProgram();
-                    }
+                    return new EndProgram();
                 case "EDIT":
-                    {
-                        return new EditComand(repository,parametrs);
-                    }
+                    return new EditComand(repository, parametrs);
                 case "LIST":
-                    {
-                        return new ShowListComand(repository, parametrs);
-                    }
+                    return new ShowListComand(repository, parametrs);
                 case "RANDOM":
-                    {
-                        return new RndComand(repository, parametrs);
-                    }
+                    return new RndComand(repository, parametrs);
                 case "FIND":
-                    {
-                        return new FindComand(repository, parametrs);
-                    }
+                    return new FindComand(repository, parametrs);
                 case "GET":
-                    {
-                        return new GetComand(repository, parametrs);
-                    }
+                    return new GetComand(repository, parametrs);
                 default:
-                    {
-                        return new Command(repository,parametrs);
-                    }
+                    return new Command(repository, parametrs);
             }
         }
     }

@@ -6,7 +6,7 @@ namespace StudentsConsoleApp
     {
         static void Main(string[] args)
         {
-            Repository repository = new Repository();
+            var repository = new Repository();
             string result;
 
             do

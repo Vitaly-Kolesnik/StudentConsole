@@ -1,7 +1,7 @@
 ﻿namespace StudentConsole
 {
     class Student
-    { 
+    {
         public string NameStudent { get; }
         public string SurNameStudents { get; }
         public string Gender { get; }
@@ -17,7 +17,7 @@
         }
         public override string ToString()
         {
-            return Id + " " + NameStudent +" "+ SurNameStudents+ " " + Gender + " " + Age;
+            return $"{Id} {NameStudent} {SurNameStudents} {Gender} {Age}\n";
         }
     }
 }

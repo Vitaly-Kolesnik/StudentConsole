@@ -1,5 +1,4 @@
-﻿using System;
-using StudentsConsoleApp;
+﻿using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
 namespace StudentConsole.Commands
@@ -7,22 +6,20 @@ namespace StudentConsole.Commands
     class ShowListComand : Command
     {
         public ShowListComand(Repository repository, string[] parametrs)
-            : base(repository,parametrs)
+            : base(repository, parametrs)
         {
         }
 
         public override string Execute()
         {
-            var size = 0;
-            foreach (Student s in repository.students)
+            var list = repository.List();
+            string listStudent = string.Empty;
+
+            foreach (Student s in list)
             {
-                if (s != null )
-                {
-                    Console.WriteLine($"{s}\n");
-                    size++;
-                }
+                listStudent += $"{s}";
             }
-            return $"Количество элементов: {size}";
+            return $"\n{ listStudent}";
         }
     }
 }

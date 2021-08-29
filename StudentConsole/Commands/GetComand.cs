@@ -4,29 +4,20 @@ using StudentsConsoleApp.Commands;
 
 namespace StudentConsole.Commands
 {
-    class GetComand:Command
+    class GetComand : Command
     {
         public GetComand(Repository repository, string[] parameters)
             : base(repository, parameters)
         {
         }
+
         public override string Execute()
         {
-            if (checkId.Checking() == -1)
+            if (repository.Get(int.Parse(parametrs[1])) != null)
             {
-                return "Введенного ID не существует!";
+                return $"{repository.Get(int.Parse(parametrs[1]))}";
             }
-            else
-            {
-                foreach (Student s in repository.students)
-                {
-                    if (s != null && s.Id == Int32.Parse(parametrs[1]))
-                    {
-                        return $"{ s}";
-                    }
-                }
-                return "Ошибка";
-            }
+            return "Ошибка";
         }
     }
 }

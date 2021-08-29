@@ -1,24 +1,41 @@
 ﻿<Properties StartupConfiguration="{B675D470-ACFB-4F3A-A5AA-3FF8A78C3732}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StudentConsole/Commands/ShowListComand.cs">
+  <MonoDevelop.Ide.Workbench>
     <Files>
-      <File FileName="StudentConsole/Commands/ShowListComand.cs" Line="22" Column="28" />
-      <File FileName="StudentConsole/Commands/AddComand.cs" />
-      <File FileName="StudentConsole/Commands/DeleteComand.cs" />
-      <File FileName="StudentConsole/Test.cs" />
+      <File FileName="StudentConsole/Repository.cs" Line="72" Column="22" />
+      <File FileName="StudentConsole/CommandsParser.cs" Line="12" Column="42" />
+      <File FileName="StudentConsole/Commands/GetComand.cs" Line="20" Column="29" />
+      <File FileName="StudentConsole/Commands/AddComand.cs" Line="18" Column="1" />
+      <File FileName="StudentConsole/Commands/Command.cs" Line="17" Column="1" />
+      <File FileName="StudentConsole/Commands/DeleteComand.cs" Line="18" Column="2" />
+      <File FileName="StudentConsole/Commands/ShowListComand.cs" Line="23" Column="10" />
+      <File FileName="StudentConsole/Program.cs" Line="18" Column="17" />
+      <File FileName="StudentConsole/Student.cs" Line="20" Column="75" />
+      <File FileName="StudentConsole/Commands/RndComand.cs" Line="26" Column="37" />
+      <File FileName="StudentConsole/Commands/FindComand.cs" Line="15" Column="23" />
+      <File FileName="StudentConsole/Commands/EndProgram.cs" Line="1" Column="1" />
+      <File FileName="StudentConsole/Commands/EditComand.cs" Line="13" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StudentConsole" expanded="True">
             <Node name="StudentConsole" expanded="True">
-              <Node name="Commands" selected="True" />
+              <Node name="Commands" expanded="True">
+                <Node name="FindComand.cs" selected="True" />
+              </Node>
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
+    <Watch file="../../../StudentConsole/CommandsParser.cs" line="11" column="30" endLine="11" endColumn="40" offsetX="-1" offsetY="-1" expression="repository.students[0]" liveUpdate="False" />
+    <Watch file="../../../StudentConsole/CommandsParser.cs" line="23" column="20" endLine="23" endColumn="29" offsetX="-1" offsetY="-1" expression="parametrs" liveUpdate="False" />
+  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

@@ -4,60 +4,72 @@ namespace StudentsConsoleApp
 {
     class Repository
     {
-        public Student[] students = new Student[10];
+        private readonly Student[] students = new Student[10];
 
         private int studentID = 0;
 
         public int Add(Student student)
         {
-            int emptyNumber = -1;
-            for (int index =0; index<this.students.Length; index++)
+            for (int index = 0; index < this.students.Length; index++)
             {
                 if (this.students[index] == null)
                 {
                     this.students[index] = student;
-                    this.students[index].Id = studentID+=1;
-                    return (emptyNumber += 1);
+                    this.students[index].Id = studentID += 1;
+                    return 1;
                 }
             }
-            return emptyNumber;
+            return -1;
         }
 
-        public void Delete(int numberId) //Нет необходимости возвращать результат, мы точно знаешь, что такой ID есть
+        public int Delete(int numberId)
         {
-            for (int index = 0; index < students.Length; index++ )
+            for (int index = 0; index < students.Length; index++)
             {
                 if (students[index].Id == numberId)
                 {
                     students[index] = null;
-                    return;
+                    return 1;
                 }
             }
+            return -1;
         }
 
-        public Student Get (int numberId)
+        public Student Get(int numberId)
         {
-            Student variable = null;
+            Student std = null;
 
             foreach (Student s in students)
             {
                 if (s != null && s.Id == numberId)
                 {
-                    variable = s;
+                    std = s;
                 }
             }
-            return variable;
+            return std;
         }
 
-        public void Edit (Student student, int id)
+        public int Edit(Student student, int id)
         {
-            for (int index = 0; index<students.Length; index++)
+            for (int index = 0; index < students.Length; index++)
             {
-                 if (students[index] !=null && students[index].Id==id)
-                 {
+                if (students[index] != null && students[index].Id == id)
+                {
                     students[index] = student;
-                 }
+                    return 1;
+                }
             }
+            return -1;
+        }
+
+        public Student[] List()
+        {
+            return students;
+        }
+
+        public Student[] Find (string parametr)
+        {
+            foreach ()
         }
     }
 }

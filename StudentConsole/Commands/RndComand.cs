@@ -6,26 +6,24 @@ namespace StudentConsole.Commands
 {
     class RndComand : Command
     {
-        public RndComand(Repository repository, string [] parametrs)
-            : base (repository,parametrs)
+        public RndComand(Repository repository, string[] parametrs)
+            : base(repository, parametrs)
         {
         }
 
         public override string Execute()
         {
+            var list = repository.List();
+
             Random rnd = new Random();
-            Student result = null; // для возвращения результат заданного типа
 
-            while (result == null)
+            Student rndStudent = list[rnd.Next(list.Length)];
+
+            while (rndStudent == null)
             {
-                var randomNumber = rnd.Next(repository.students.Length); //Повышаю читабельность кода
-
-                if ( repository.students[randomNumber] != null)
-                {
-                    result = repository.students[randomNumber];
-                }
+                rndStudent = list[rnd.Next(list.Length)];
             }
-            return $"{result}";
+            return $"{ rndStudent}";
         }
     }
 }
