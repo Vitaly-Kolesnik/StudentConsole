@@ -1,4 +1,5 @@
-﻿using StudentConsole;
+﻿using System;
+using StudentConsole;
 
 namespace StudentsConsoleApp
 {
@@ -20,6 +21,11 @@ namespace StudentsConsoleApp
                 }
             }
             return -1;
+        }
+
+        internal object Find(object p)
+        {
+            throw new NotImplementedException();
         }
 
         public int Delete(int numberId)
@@ -67,9 +73,43 @@ namespace StudentsConsoleApp
             return students;
         }
 
-        public Student[] Find (string parametr)
+        public Student[] Find(string parametr)
         {
-            foreach ()
+            int sizeFindArray = 0;
+
+            foreach (Student s in students)
+            {
+                if (s != null && s.SurNameStudents.Contains(parametr))
+                {
+                    sizeFindArray += 1;
+                    break;
+                }
+
+                if (s != null && s.NameStudent.Contains(parametr))
+                {
+                    sizeFindArray += 1;
+                }
+            }
+            Student[] findArray = new Student[sizeFindArray];
+
+            int index = 0;
+
+            foreach (Student s in students)
+            {
+                if (s != null && s.SurNameStudents.Contains(parametr))
+                {
+                    findArray[index] = s;
+                    index++;
+                    break;
+                }
+
+                if (s != null && s.NameStudent.Contains(parametr))
+                {
+                    findArray[index] = s;
+                    index++;
+                }
+            }
+            return findArray;
         }
     }
 }

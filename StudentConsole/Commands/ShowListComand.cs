@@ -17,9 +17,9 @@ namespace StudentConsole.Commands
 
             foreach (Student s in list)
             {
-                listStudent += $"{s}";
+                listStudent += $"{s}\n";
             }
-            return $"\n{ listStudent}";
+            return $"{ listStudent.TrimEnd()}";
         }
     }
 }

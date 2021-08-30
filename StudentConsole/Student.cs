@@ -17,7 +17,7 @@
         }
         public override string ToString()
         {
-            return $"{Id} {NameStudent} {SurNameStudents} {Gender} {Age}\n";
+            return $"{Id} {NameStudent} {SurNameStudents} {Gender} {Age}";
         }
     }
 }

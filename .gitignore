@@ -64,3 +64,7 @@ StudentConsole/.DS_Store
 StudentConsole/bin/Debug/StudentConsole.exe
 *.pdb
 .DS_Store
+*.xml
+*.exe
+*.exe
+*.pdb

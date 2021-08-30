@@ -1,27 +1,12 @@
 ﻿<Properties StartupConfiguration="{B675D470-ACFB-4F3A-A5AA-3FF8A78C3732}|Default">
   <MonoDevelop.Ide.Workbench>
-    <Files>
-      <File FileName="StudentConsole/Repository.cs" Line="72" Column="22" />
-      <File FileName="StudentConsole/CommandsParser.cs" Line="12" Column="42" />
-      <File FileName="StudentConsole/Commands/GetComand.cs" Line="20" Column="29" />
-      <File FileName="StudentConsole/Commands/AddComand.cs" Line="18" Column="1" />
-      <File FileName="StudentConsole/Commands/Command.cs" Line="17" Column="1" />
-      <File FileName="StudentConsole/Commands/DeleteComand.cs" Line="18" Column="2" />
-      <File FileName="StudentConsole/Commands/ShowListComand.cs" Line="23" Column="10" />
-      <File FileName="StudentConsole/Program.cs" Line="18" Column="17" />
-      <File FileName="StudentConsole/Student.cs" Line="20" Column="75" />
-      <File FileName="StudentConsole/Commands/RndComand.cs" Line="26" Column="37" />
-      <File FileName="StudentConsole/Commands/FindComand.cs" Line="15" Column="23" />
-      <File FileName="StudentConsole/Commands/EndProgram.cs" Line="1" Column="1" />
-      <File FileName="StudentConsole/Commands/EditComand.cs" Line="13" Column="1" />
-    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StudentConsole" expanded="True">
             <Node name="StudentConsole" expanded="True">
               <Node name="Commands" expanded="True">
-                <Node name="FindComand.cs" selected="True" />
+                <Node name="RndComand.cs" selected="True" />
               </Node>
             </Node>
           </Node>
