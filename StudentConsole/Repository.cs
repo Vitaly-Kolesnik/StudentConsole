@@ -43,16 +43,16 @@ namespace StudentsConsoleApp
 
         public Student Get(int numberId)
         {
-            Student std = null;
 
             foreach (Student s in students)
             {
                 if (s != null && s.Id == numberId)
                 {
-                    std = s;
+                    return s;
+
                 }
             }
-            return std;
+            return null;
         }
 
         public int Edit(Student student, int id)
@@ -70,7 +70,30 @@ namespace StudentsConsoleApp
 
         public Student[] List()
         {
-            return students;
+            int sizeFindArray = 0;
+
+            foreach (Student s in students)
+            {
+                if (s != null)
+                {
+                    sizeFindArray += 1;
+                }
+            }
+
+            Student[] result = new Student[sizeFindArray];
+
+            int index = 0;
+
+            foreach (Student s in students)
+            {
+                if (s != null)
+                {
+                    result[index] = s;
+                    index++;
+                }
+            }
+
+            return result;
         }
 
         public Student[] Find(string parametr)
@@ -79,13 +102,7 @@ namespace StudentsConsoleApp
 
             foreach (Student s in students)
             {
-                if (s != null && s.SurNameStudents.Contains(parametr))
-                {
-                    sizeFindArray += 1;
-                    break;
-                }
-
-                if (s != null && s.NameStudent.Contains(parametr))
+                if (s != null && s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr))
                 {
                     sizeFindArray += 1;
                 }
@@ -96,17 +113,11 @@ namespace StudentsConsoleApp
 
             foreach (Student s in students)
             {
-                if (s != null && s.SurNameStudents.Contains(parametr))
+                if (s != null && s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr))
                 {
                     findArray[index] = s;
                     index++;
                     break;
-                }
-
-                if (s != null && s.NameStudent.Contains(parametr))
-                {
-                    findArray[index] = s;
-                    index++;
                 }
             }
             return findArray;

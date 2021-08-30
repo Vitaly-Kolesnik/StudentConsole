@@ -19,6 +19,7 @@ namespace StudentConsole.Commands
             {
                 listStudent += $"{s}\n";
             }
+
             return $"{ listStudent.TrimEnd()}";
         }
     }

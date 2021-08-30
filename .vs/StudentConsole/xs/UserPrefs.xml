@@ -6,14 +6,11 @@
           <Node name="StudentConsole" expanded="True">
             <Node name="StudentConsole" expanded="True">
               <Node name="Commands" expanded="True">
-                <Node name="RndComand.cs" selected="True" />
+                <Node name="DeleteComand.cs" selected="True" />
               </Node>
             </Node>
           </Node>
         </State>
-      </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
