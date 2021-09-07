@@ -19,10 +19,6 @@ namespace StudentConsole.Commands
 
             Student rndStudent = list[rnd.Next(list.Length)];
 
-            while (rndStudent == null)
-            {
-                rndStudent = list[rnd.Next(list.Length)];
-            }
             return $"{ rndStudent}";
         }
     }

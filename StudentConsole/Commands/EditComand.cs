@@ -13,7 +13,7 @@ namespace StudentConsole.Commands
 
         public override string Execute()
         {
-            return repository.Edit(new Student(parametrs[2], parametrs[3], parametrs[4], parametrs[5]), Int32.Parse(parametrs[1])) == 1 ? "Изменено" : "Ошибка";
+            return repository.Edit(new Student(Int32.Parse(parametrs[0]), parametrs[1], parametrs[2], parametrs[3], int.Parse(parametrs[4]))) == 1 ? "Изменено" : "Ошибка";
         }
     }
 }

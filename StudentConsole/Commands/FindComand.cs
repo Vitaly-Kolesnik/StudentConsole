@@ -1,5 +1,4 @@
-﻿using System;
-using System.Diagnostics;
+﻿using System.Text;
 using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
@@ -13,15 +12,15 @@ namespace StudentConsole.Commands
         }
         public override string Execute()
         {
-            var findlist = repository.Find(parametrs[1]);
+            Student[] findlist = repository.Find(parametrs[0]);
 
-            string findStudent = string.Empty;
+            StringBuilder result = new StringBuilder();
 
             foreach (Student s in findlist)
             {
-                findStudent += $"{s}\n";
+                result.AppendLine($"{ s}");
             }
-            return $"{ findStudent.TrimEnd()}";
+            return result.ToString();
         }
     }
 }

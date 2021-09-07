@@ -44,9 +44,17 @@
     <Compile Include="Commands\ShowListComand.cs" />
     <Compile Include="Commands\RndComand.cs" />
     <Compile Include="Commands\FindComand.cs" />
+    <Compile Include="Commands\UnknowComand.cs" />
+    <Compile Include="Validator\IValidator.cs" />
+    <Compile Include="Validator\BaseValidator.cs" />
+    <Compile Include="Validator\AddValidator.cs" />
+    <Compile Include="Validator\DeleteValidator.cs" />
+    <Compile Include="Validator\GetValidator.cs" />
+    <Compile Include="Validator\EditValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
+    <Folder Include="Validator\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

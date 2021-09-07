@@ -1,4 +1,5 @@
-﻿using StudentConsole.Commands;
+﻿using System;
+using StudentConsole.Commands;
 using StudentsConsoleApp.Commands;
 
 namespace StudentsConsoleApp
@@ -26,8 +27,12 @@ namespace StudentsConsoleApp
                     index++;
                 }
             }
+            var command = parametrs[0];
+            string[] newparametrs = new string[5];
+            Array.Copy(parametrs, 1, newparametrs, 0,newparametrs.Length);
+            parametrs = newparametrs;
 
-            switch (parametrs[0].ToUpper())
+            switch (command.ToUpper())
             {
                 case "ADD":
                     return new AddComand(repository, parametrs);
@@ -46,7 +51,7 @@ namespace StudentsConsoleApp
                 case "GET":
                     return new GetComand(repository, parametrs);
                 default:
-                    return new Command(repository, parametrs);
+                    return new UnknowComand(repository, parametrs);
             }
         }
     }

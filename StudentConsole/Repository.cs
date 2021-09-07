@@ -16,18 +16,11 @@ namespace StudentsConsoleApp
                 if (this.students[index] == null)
                 {
                     this.students[index] = student;
-                    this.students[index].Id = studentID += 1;
-                    return 1;
+                    return this.students[index].Id = studentID += 1;
                 }
             }
             return -1;
         }
-
-        internal object Find(object p)
-        {
-            throw new NotImplementedException();
-        }
-
         public int Delete(int numberId)
         {
             for (int index = 0; index < students.Length; index++)
@@ -40,26 +33,22 @@ namespace StudentsConsoleApp
             }
             return -1;
         }
-
         public Student Get(int numberId)
         {
-
             foreach (Student s in students)
             {
                 if (s != null && s.Id == numberId)
                 {
                     return s;
-
                 }
             }
             return null;
         }
-
-        public int Edit(Student student, int id)
+        public int Edit(Student student)
         {
             for (int index = 0; index < students.Length; index++)
             {
-                if (students[index] != null && students[index].Id == id)
+                if (students[index] != null && students[index].Id == student.Id)
                 {
                     students[index] = student;
                     return 1;
@@ -67,7 +56,6 @@ namespace StudentsConsoleApp
             }
             return -1;
         }
-
         public Student[] List()
         {
             int sizeFindArray = 0;
@@ -79,7 +67,6 @@ namespace StudentsConsoleApp
                     sizeFindArray += 1;
                 }
             }
-
             Student[] result = new Student[sizeFindArray];
 
             int index = 0;
@@ -92,17 +79,15 @@ namespace StudentsConsoleApp
                     index++;
                 }
             }
-
             return result;
         }
-
         public Student[] Find(string parametr)
         {
             int sizeFindArray = 0;
 
             foreach (Student s in students)
             {
-                if (s != null && s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr))
+                if (s != null && (s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr)))
                 {
                     sizeFindArray += 1;
                 }
@@ -113,11 +98,10 @@ namespace StudentsConsoleApp
 
             foreach (Student s in students)
             {
-                if (s != null && s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr))
+                if (s != null && (s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr)))
                 {
                     findArray[index] = s;
                     index++;
-                    break;
                 }
             }
             return findArray;
