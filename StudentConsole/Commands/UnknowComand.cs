@@ -9,7 +9,6 @@ namespace StudentConsole.Commands
             : base(repository, parametrs)
         {
         }
-
         public override string Execute()
         {
             return "Ничего не вышло";

@@ -1,5 +1,4 @@
-﻿using System;
-using StudentConsole;
+﻿using StudentConsole;
 using StudentConsole.Validator;
 
 namespace StudentsConsoleApp.Commands

@@ -12,7 +12,6 @@ namespace StudentConsole.Commands
         {
             validator = new EditValidator(parametrs);
         }
-
         public override string Execute()
         {
             string nameStudent = (parametrs[0].Substring(0, 1).ToUpper() + parametrs[0].Remove(0, 1).ToLower());

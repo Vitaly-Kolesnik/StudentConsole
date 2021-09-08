@@ -10,7 +10,7 @@ namespace StudentsConsoleApp.Commands
         public Command(Repository repository, string[] parametrs)
         {
             this.parametrs = parametrs;
-            this.repository = repository;   
+            this.repository = repository;
         }
         public Command()
         {

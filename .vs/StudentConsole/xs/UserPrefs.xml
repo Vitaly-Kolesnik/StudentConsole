@@ -5,10 +5,8 @@
         <State name="__root__">
           <Node name="StudentConsole" expanded="True">
             <Node name="StudentConsole" expanded="True">
-              <Node name="Commands" expanded="True">
-                <Node name="EditComand.cs" selected="True" />
-              </Node>
-              <Node name="Validator" expanded="True" />
+              <Node name="Commands" expanded="True" />
+              <Node name="Student.cs" selected="True" />
             </Node>
           </Node>
         </State>

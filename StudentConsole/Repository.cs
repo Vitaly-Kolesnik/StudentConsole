@@ -81,7 +81,7 @@ namespace StudentsConsoleApp
 
             foreach (Student s in students)
             {
-                if (s != null && (s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr)))
+                if (s != null && s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr))
                 {
                     newStudents[sizeFindArray] = s;
                     sizeFindArray += 1;

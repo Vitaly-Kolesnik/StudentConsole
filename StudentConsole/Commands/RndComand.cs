@@ -12,7 +12,6 @@ namespace StudentConsole.Commands
         {
             validator = new RndValidator(parametrs);
         } 
-
         public override string Execute()
         {
             var list = repository.List();
