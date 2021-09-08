@@ -1,4 +1,5 @@
 ﻿using System;
+using StudentConsole.Validator;
 using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
@@ -9,7 +10,8 @@ namespace StudentConsole.Commands
         public RndComand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
         {
-        }
+            validator = new RndValidator(parametrs);
+        } 
 
         public override string Execute()
         {

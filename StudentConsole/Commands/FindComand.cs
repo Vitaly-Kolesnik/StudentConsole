@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using StudentConsole.Validator;
 using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
@@ -9,6 +10,7 @@ namespace StudentConsole.Commands
         public FindComand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
         {
+            validator = new FindValidator(parametrs);
         }
         public override string Execute()
         {

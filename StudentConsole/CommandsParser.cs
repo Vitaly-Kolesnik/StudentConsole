@@ -29,26 +29,27 @@ namespace StudentsConsoleApp
             }
             var command = parametrs[0];
             string[] newparametrs = new string[5];
-            Array.Copy(parametrs, 1, newparametrs, 0,newparametrs.Length);
+            Array.Copy(parametrs, 1, newparametrs, 0, newparametrs.Length);
             parametrs = newparametrs;
 
-            switch (command.ToUpper())
+            switch (command.ToUpper(), repository != null) //Пока база пуста сработать может только команда add
             {
-                case "ADD":
+                case ("ADD", true):
+                case ("ADD", false):
                     return new AddComand(repository, parametrs);
-                case "DELETE":
+                case ("DELETE", true):
                     return new DeleteComand(repository, parametrs);
-                case "END":
+                case ("END", true):
                     return new EndProgram();
-                case "EDIT":
+                case ("EDIT", true):
                     return new EditComand(repository, parametrs);
-                case "LIST":
+                case ("LIST", true):
                     return new ShowListComand(repository, parametrs);
-                case "RANDOM":
+                case ("RANDOM", true):
                     return new RndComand(repository, parametrs);
-                case "FIND":
+                case ("FIND", true):
                     return new FindComand(repository, parametrs);
-                case "GET":
+                case ("GET", true):
                     return new GetComand(repository, parametrs);
                 default:
                     return new UnknowComand(repository, parametrs);

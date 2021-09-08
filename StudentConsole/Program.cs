@@ -4,7 +4,7 @@ namespace StudentsConsoleApp
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             var repository = new Repository();
             string result;

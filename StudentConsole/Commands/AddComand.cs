@@ -1,4 +1,5 @@
-﻿using StudentConsole;
+﻿using System;
+using StudentConsole;
 using StudentConsole.Validator;
 
 namespace StudentsConsoleApp.Commands
@@ -8,12 +9,14 @@ namespace StudentsConsoleApp.Commands
         public AddComand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
         {
-            
+            validator = new AddValidator(parametrs);
         }
 
         public override string Execute()
         {
-            return repository.Add(new Student(parametrs[0], parametrs[1], parametrs[2], int.Parse(parametrs[3]))) > 0 ? "Ok" : "Ошибка";
+            string nameStudent = (parametrs[0].Substring(0, 1).ToUpper() + parametrs[0].Remove(0, 1).ToLower());
+            string surNameStudent = (parametrs[1].Substring(0, 1).ToUpper() + parametrs[1].Remove(0, 1).ToLower());
+            return repository.Add(new Student(nameStudent, surNameStudent, int.Parse(parametrs[2]), parametrs[3])) > 0 ? "Ok" : "Ошибка";
         }
     }
 }

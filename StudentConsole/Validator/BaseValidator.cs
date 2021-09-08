@@ -1,19 +1,31 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
 namespace StudentConsole.Validator
 {
-    
+
     public abstract class BaseValidator : IValidator
     {
         protected readonly string[] parameters;
         private StringBuilder sb = new StringBuilder();
-        private const int lineLength = 50;
         public string ErrorMessage => sb.ToString();
 
 
         protected BaseValidator(string[] parameters)
         {
             this.parameters = parameters;
+        }
+        protected bool ValidateParamsCount(int count, string[] parametrs)//Метод для опеределения заполненности строки после команды (корректность введения)
+        {
+            int index = 0;
+
+            foreach (string s in parametrs)
+            {
+                if (s != null) index++;
+            }
+            if (count == index) return true;
+            sb.AppendLine("Ошибка ввода команды");
+            return false;
         }
         protected bool ValidateId(string id)
         {
@@ -24,24 +36,48 @@ namespace StudentConsole.Validator
             sb.AppendLine("Ошибка номера id");
             return false;
         }
-        protected bool ValidateTryCommand(int )//Метод для опеределения заполненности строки после команды (корректность введения)
+        protected bool ValidateString(string name)
         {
-            if (parametrs[1] != null)
+            if (name.Length > 50) //Специально разными ифами
             {
-                sb.AppendLine("Ошибка ввода команды (строка имееет )");
+                sb.AppendLine("Недопустимая длинна ФИ");
                 return false;
             }
-            return true;
-        }
-        protected bool ValidateFind(string[] parametrs)
-        {
-            if (parametrs[0].Length < lineLength)
+            for (int i = 0; name.Length > i; i++)
             {
-                return ValidateTryCommand(parametrs);
+                if (Char.IsDigit(name, i))
+                {
+                    sb.AppendLine("ФИ не должны содержать цифр");
+                    return false;
+                }
             }
             return true;
         }
+        protected bool ValidateAge(string age)
+        {
+            if (uint.TryParse(age, out uint numberAge))
+            {
+                if (numberAge >= 18 && numberAge <= 99) return true;
+                sb.AppendLine("Не допустимое значение возвраста");
+                return false;
+            }
+            sb.AppendLine("Не допустимое значение возвраста");
+            return false;
+        }
+        protected bool ValidateGender(string gender)
+        {
+            string[] allowableValues = { "М", "Ж", "Мужской", "Женский", "Муж", "Жен" };
 
+            foreach (string s in allowableValues)
+            {
+                if (gender.ToLower() == s.ToLower())
+                {
+                    return true;
+                }
+            }
+            sb.AppendLine("Не допустимое значение пола");
+            return false;
+        }
         public abstract bool Validate();
     }
 }

@@ -1,44 +1,21 @@
 ﻿<Properties StartupConfiguration="{B675D470-ACFB-4F3A-A5AA-3FF8A78C3732}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="StudentConsole/Validator/DeleteValidator.cs">
-    <Files>
-      <File FileName="StudentConsole/Commands/RndComand.cs" Line="1" Column="1" />
-      <File FileName="StudentConsole/Repository.cs" />
-      <File FileName="StudentConsole/Commands/EditComand.cs" Line="20" Column="1" />
-      <File FileName="StudentConsole/Commands/EndProgram.cs" />
-      <File FileName="StudentConsole/Commands/FindComand.cs" />
-      <File FileName="StudentConsole/Commands/ShowListComand.cs" />
-      <File FileName="StudentConsole/Commands/UnknowComand.cs" />
-      <File FileName="StudentConsole/Student.cs" Line="8" Column="16" />
-      <File FileName="StudentConsole/Commands/AddComand.cs" Line="16" Column="89" />
-      <File FileName="StudentConsole/Validator/BaseValidator.cs" Line="27" Column="47" />
-      <File FileName="StudentConsole/Validator/DeleteValidator.cs" Line="12" Column="49" />
-      <File FileName="StudentConsole/Validator/EditValidator.cs" Line="1" Column="1" />
-      <File FileName="StudentConsole/Validator/GetValidator.cs" Line="11" Column="1" />
-      <File FileName="StudentConsole/Validator/IValidator.cs" />
-      <File FileName="StudentConsole/Validator/AddValidator.cs" Line="1" Column="1" />
-      <File FileName="StudentConsole/CommandsParser.cs" />
-      <File FileName="StudentConsole/Commands/Command.cs" Line="29" Column="1" />
-      <File FileName="StudentConsole/Program.cs" Line="13" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="StudentConsole" expanded="True">
             <Node name="StudentConsole" expanded="True">
-              <Node name="Commands" expanded="True" />
-              <Node name="Validator" expanded="True">
-                <Node name="DeleteValidator.cs" selected="True" />
+              <Node name="Commands" expanded="True">
+                <Node name="EditComand.cs" selected="True" />
               </Node>
+              <Node name="Validator" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches>
-    <Watch file="../../../StudentConsole/CommandsParser.cs" line="11" column="30" endLine="11" endColumn="40" offsetX="-1" offsetY="-1" expression="repository.students[0]" liveUpdate="False" />
-    <Watch file="../../../StudentConsole/CommandsParser.cs" line="23" column="20" endLine="23" endColumn="29" offsetX="-1" offsetY="-1" expression="parametrs" liveUpdate="False" />
-  </MonoDevelop.Ide.DebuggingService.PinnedWatches>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

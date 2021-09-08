@@ -58,53 +58,37 @@ namespace StudentsConsoleApp
         }
         public Student[] List()
         {
-            int sizeFindArray = 0;
+            Student[] newStudents = new Student[students.Length];
+
+            int sizeArray = 0;
 
             foreach (Student s in students)
             {
                 if (s != null)
                 {
-                    sizeFindArray += 1;
+                    newStudents[sizeArray] = s;
+                    sizeArray += 1;
                 }
             }
-            Student[] result = new Student[sizeFindArray];
-
-            int index = 0;
-
-            foreach (Student s in students)
-            {
-                if (s != null)
-                {
-                    result[index] = s;
-                    index++;
-                }
-            }
-            return result;
+            Array.Resize(ref newStudents, sizeArray+1);
+            return newStudents;
         }
         public Student[] Find(string parametr)
         {
+            Student[] newStudents = new Student[students.Length];
+
             int sizeFindArray = 0;
 
             foreach (Student s in students)
             {
                 if (s != null && (s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr)))
                 {
+                    newStudents[sizeFindArray] = s;
                     sizeFindArray += 1;
                 }
             }
-            Student[] findArray = new Student[sizeFindArray];
-
-            int index = 0;
-
-            foreach (Student s in students)
-            {
-                if (s != null && (s.SurNameStudents.Contains(parametr) || s.NameStudent.Contains(parametr)))
-                {
-                    findArray[index] = s;
-                    index++;
-                }
-            }
-            return findArray;
+            Array.Resize(ref newStudents, sizeFindArray + 1);
+            return newStudents;
         }
     }
 }

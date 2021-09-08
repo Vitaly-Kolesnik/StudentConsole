@@ -1,4 +1,5 @@
-﻿using StudentsConsoleApp;
+﻿using StudentConsole.Validator;
+using StudentsConsoleApp;
 using StudentsConsoleApp.Commands;
 
 namespace StudentConsole.Commands
@@ -8,8 +9,8 @@ namespace StudentConsole.Commands
         public ShowListComand(Repository repository, string[] parametrs)
             : base(repository, parametrs)
         {
+            validator = new ListValidator(parametrs);
         }
-
         public override string Execute()
         {
             var list = repository.List();
