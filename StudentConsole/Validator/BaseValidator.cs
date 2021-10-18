@@ -9,21 +9,21 @@ namespace StudentConsole.Validator
         protected readonly string[] parameters;
         private StringBuilder sb = new StringBuilder();
         public string ErrorMessage => sb.ToString();
-
+        protected abstract int Count { get; }
 
         protected BaseValidator(string[] parameters)
         {
             this.parameters = parameters;
         }
-        protected bool ValidateParamsCount(int count, string[] parametrs)//Метод для опеределения заполненности строки после команды (корректность введения)
+        protected bool ValidateParamsCount()//Метод для опеределения заполненности строки после команды (корректность введения)
         {
             int index = 0;
 
-            foreach (string s in parametrs)
+            foreach (string s in parameters)
             {
                 if (s != null) index++;
             }
-            if (count == index) return true;
+            if (Count == index) return true;
             sb.AppendLine("Ошибка ввода команды");
             return false;
         }

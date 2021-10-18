@@ -2,11 +2,11 @@
 {
     public class GetValidator : BaseValidator
     {
-        private const int countParametr = 1;
+        protected override int Count => 1;
 
         public GetValidator(string[] parameters) : base(parameters)
         {
         }
-        public override bool Validate() => ValidateParamsCount(countParametr, parameters) && ValidateId(parameters[0]);
+        public override bool Validate() => ValidateParamsCount() && ValidateId(parameters[0]);
     }
 }
